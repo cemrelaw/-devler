@@ -97,18 +97,26 @@ class Window(QMainWindow):
         new_px = QStyle.StandardPixmap.SP_FileDialogNewFolder
         new_icon = self.style().standardIcon(new_px)
         self.newAction = QAction(QIcon(new_icon), " &new", self) 
+        newTip = "Create a New File"
+        self.newAction.setStatusTip(newTip)
 
         open_px = QStyle.StandardPixmap.SP_DialogOpenButton
         open_icon = self.style().standardIcon(open_px)
         self.openAction = QAction(QIcon(open_icon), " &open... ", self)
+        openTip = "Open File"
+        self.openAction.setStatusTip(openTip)
 
         save_px = QStyle.StandardPixmap.SP_DialogSaveButton
         save_icon = self.style().standardIcon(save_px)
         self.saveAction = QAction(QIcon(save_icon), " &save", self)
+        saveTip = "Save File"
+        self.saveAction.setStatusTip(saveTip)
 
         exit_px = QStyle.StandardPixmap.SP_DialogCloseButton
         exit_icon = self.style().standardIcon(exit_px)
         self.exitAction = QAction(QIcon(exit_icon), " &exit", self)
+        exitTip = "Exit"
+        self.exitAction.setStatusTip(exitTip)
 
         self.newAction.setShortcut("Ctrl+N")
         self.openAction.setShortcut("Ctrl+O")
@@ -123,13 +131,11 @@ class Window(QMainWindow):
         self.pasteAction.setShortcut(QKeySequence.StandardKey.Paste)
         self.cutAction.setShortcut(QKeySequence.StandardKey.Cut)
 
-        newTip = "Create a New File"
-        self.newAction.setStatusTip(newTip)
-        
+
         help_px = QStyle.StandardPixmap.SP_MessageBoxQuestion
         help_icon = self.style().standardIcon(help_px)
         self.helpContentAction = QAction(QIcon(help_icon), " &help content", self)
-        
+
         about_px = QStyle.StandardPixmap.SP_MessageBoxInformation
         about_icon = self.style().standardIcon(about_px)
         self.aboutAction = QAction(QIcon(about_icon), " &about", self)
